@@ -73,4 +73,4 @@ Cluster is created using container instances: EC2 launch type.
 
 # #Steps to Launch the webApp 
 - Copy the alb dns in the output in the browser and the main page of greeter app will display.
-- To to path based routing you can type dns/param?name=anyname 
+- To do path based routing you can type dns/param?name=anyname 

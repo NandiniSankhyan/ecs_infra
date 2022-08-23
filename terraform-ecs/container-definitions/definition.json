@@ -1,0 +1,22 @@
+[
+    {
+      "name": "terraform-aws-ecs-container-definition",
+      "image": "837161425470.dkr.ecr.eu-west-2.amazonaws.com/greeter:latest",
+      "cpu": 10,
+      "memory": 256,
+      "essential": true,
+      "portMappings": [
+        {
+          "containerPort": 8080,
+          "hostPort": 80
+        }
+      ],
+      "logConfiguration": {
+        "logDriver": "awslogs",
+        "options": { 
+          "awslogs-group" : "/ecs/greeter-container",
+          "awslogs-region": "eu-west-2"
+        }
+      }
+    }
+]
