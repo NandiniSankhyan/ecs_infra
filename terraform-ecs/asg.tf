@@ -20,7 +20,6 @@ data "aws_ami" "amazon_linux" {
 
 resource "aws_security_group" "ec2-sg" {
   name        = "ec2-sg-greeter"
-  description = "allow port 80"
   vpc_id      = data.aws_vpc.main.id
   ingress {
     from_port   = 80
@@ -29,9 +28,9 @@ resource "aws_security_group" "ec2-sg" {
     cidr_blocks = ["0.0.0.0/0"]
   }
   egress {
-    from_port   = 80
-    to_port     = 80
-    protocol    = "TCP"
+    from_port   = 0
+    to_port     = 0
+    protocol    = "-1"
     cidr_blocks = ["0.0.0.0/0"]
   }
 
